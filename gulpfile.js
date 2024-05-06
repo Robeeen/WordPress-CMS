@@ -8,7 +8,6 @@ gulp.watch - watch files folders
 ---------------------------------
 */
 const gulp = require('gulp');
-//const sass = require('gulp-sass');
 //const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
@@ -18,12 +17,12 @@ const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 
 gulp.task('styles', function() {
-    return gulp.src('./devwp/src/scss/**/*.scss')
+    return gulp.src('devwp/src/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      //.pipe(autoprefixer('last 2 versions'))
+      //.pipe(autoprefixer('last 2 version'))
       .pipe(cleanCSS())
       .pipe(rename({ suffix: '.min' })) 
-      .pipe(gulp.dest('./devwp/dist/css')) 
+      .pipe(gulp.dest('devwp/dist/css')) 
       .pipe(browserSync.reload({      
            stream: true     
        }));
