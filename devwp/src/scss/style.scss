@@ -1,7 +1,13 @@
+
+$background-color: #ccc;
+$primary-color: #333;
+$margin: 0 25px;
+
 body{
-    background-color: rgb(177, 177, 174);
-    width: 100%;
+    background-color: $background-color;
+    color: $primary-color;
 }
 .container {
+    margin: $margin;
     width: 100%;
   }
